@@ -1,13 +1,14 @@
-# STM32-ChromaWave-Synth  
-  
-**Project Summary**  
-Embedded C project implementing real-time Direct Digital Synthesis (DDS) on an STM32F4 Discovery Board. It converts color data (via I2C sensor) into audio frequency and timbre.  
+# ChromaWave: Real-Time Audio Synthesizer (STM32F4)
 
-**Key Technical Features**  
-- DDS Implementation: Custom logic for wavetable look-up and phase accumulation for sine, ramp, and square waves.	 
-- Real-Time Mixing: Algorithm to blend three waveforms based on the RGB color ratios.	
-- Hardware Integration: Implemented I2C and ADC drivers to interface with the RGB color sensor and volume potentiometer.	 
-- Buffer Management: Utilized ping-pong buffering logic to ensure low-latency, continuous audio output.
+Embedded C project implementing real-time **Direct Digital Synthesis (DDS)** on an **STM32F4 Discovery Board**. This system converts visual data (via an I2C color sensor) into synthesized audio frequency and timbre.
 
-**Core Logic Files**  
-The primary synthesis logic, mixing algorithms, and buffer management are contained in main.c.
+---
+
+### Key Technical Features
+
+* **Real-Time DDS:** Custom C logic for wavetable generation (sine, ramp, square) and phase accumulation, ensuring low-latency sound synthesis.
+* **Audio Mixing Algorithm:** Implemented a unique formula to blend three base waveforms based on the real-time ratio of RGB color values, dynamically controlling timbre.
+* **Hardware Integration:** Utilized **I2C** to read the color sensor and **ADC** to manage the volume potentiometer, demonstrating full hardware-software interfacing.
+* **Buffer Management:** Employed a **ping-pong buffering** architecture within the audio driver to maintain continuous, gapless audio output.
+
+**The primary synthesis logic, mixing algorithms, and buffer management are contained within the `main.c` file.**
